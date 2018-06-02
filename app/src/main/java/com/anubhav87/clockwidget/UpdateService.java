@@ -51,23 +51,7 @@ public class UpdateService extends Service {
         updateWidget();
         return Service.START_STICKY;
     }
-    private RemoteViews buildUpdate(Context context){
-        // we build view for clock widget
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.clock__widget);
-        // clock data
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date());
-        remoteViews.setTextViewText(R.id.hours,String.valueOf(c.get(Calendar.HOUR_OF_DAY)));
-        remoteViews.setTextViewText(R.id.min,String.valueOf(c.get(Calendar.MINUTE)));
 
-        //we must think that min < 10 miss 0 to start so we must manage that case.
-        int min = c.get(Calendar.MINUTE);
-        remoteViews.setTextViewText(R.id.min, (min < 10 ?  "0":"")+String.valueOf(min));
-
-        // now it stays to configure Android Manifest
-
-        return remoteViews;
-    }
     private void updateWidget() {
         Log.e("updateWidgetinService","hello");
 

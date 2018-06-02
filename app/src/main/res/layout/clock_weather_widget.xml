@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="-5dp">
+<TextView
+    android:textSize="42dp"
+    android:textColor="#ffffffff"
+    android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+    android:id="@+id/time"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="00:00"
+    android:shadowColor="#99000000"
+    android:shadowDx="1.0"
+    android:shadowDy="1.0"
+    android:shadowRadius="3.0" />
+<TextView
+    android:textSize="10dp"
+    android:textColor="#ffffffff"
+    android:id="@+id/ampm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="-9dp"
+    android:layout_marginTop="35dp"
+    android:text="AM"
+    android:shadowColor="#99000000"
+    android:shadowDx="0.0"
+    android:shadowDy="1.5"
+    android:shadowRadius="3.0"
+    android:layout_toRightOf="@+id/time" />
+</RelativeLayout>
+<RelativeLayout
+android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="40dp">
+<TextView
+    android:textSize="10dp"
+    android:textColor="#ffffffff"
+    android:id="@+id/month"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:text="January"
+    android:shadowColor="#99000000"
+    android:shadowDx="0.0"
+    android:shadowDy="1.5"
+    android:shadowRadius="3.0"
+    android:layout_toRightOf="@+id/dayOfMonth" />
+<TextView
+    android:textSize="10dp"
+    android:textColor="#ffffffff"
+    android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+    android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+    android:id="@+id/dayOfWeek"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:text="Saturday"
+    android:shadowColor="#99000000"
+    android:shadowDx="0.0"
+    android:shadowDy="1.5"
+    android:shadowRadius="3.0"
+    android:layout_alignParentTop="false" />
+<TextView
+    android:textSize="10dp"
+    android:textColor="#ffffffff"
+    android:id="@+id/year"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:text="2013"
+    android:shadowColor="#99000000"
+    android:shadowDx="0.0"
+    android:shadowDy="1.5"
+    android:shadowRadius="3.0"
+    android:layout_toRightOf="@+id/dayOfMonth" />
+<TextView
+    android:textSize="25dp"
+    android:textColor="#ffffffff"
+    android:id="@+id/dayOfMonth"
+    android:paddingLeft="1dp"
+    android:paddingTop="0dp"
+    android:paddingRight="1dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="1"
+    android:shadowColor="#99000000"
+    android:shadowDx="0.0"
+    android:shadowDy="1.5"
+    android:shadowRadius="3.0"
+    android:layout_toRightOf="@+id/dayOfWeek"
+    android:layout_alignParentTop="false"
+    android:layout_alignParentRight="false" />
+</RelativeLayout>
+    </RelativeLayout>
