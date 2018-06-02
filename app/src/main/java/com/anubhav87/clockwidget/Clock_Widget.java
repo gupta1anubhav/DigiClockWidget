@@ -44,13 +44,15 @@ public class Clock_Widget extends AppWidgetProvider {
     }
 
 
-    private PendingIntent createUpdateIntent(Context context){
+   /* private PendingIntent createUpdateIntent(Context context){
         Intent intent = new Intent(CLOCK_WIDGET_UPDATE);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,
                 intent,PendingIntent.FLAG_UPDATE_CURRENT);
         return pendingIntent;
-    }
+    }*/
 
+    //This layout is old and very basic
+    // Removed for now.
   /*  private void buildUpdate(Context context) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.clock__widget);
@@ -135,10 +137,10 @@ public class Clock_Widget extends AppWidgetProvider {
             }
             remoteViews.setTextViewText(Constants.id.ampm, dayTime);
         }
-     //   PendingIntent clockIntent = ClockUtil.getClockIntent(context);
-      //  if (clockIntent != null) {
-      //      remoteViews.setOnClickPendingIntent(Constants.id.time, clockIntent);
-     //   }
+       PendingIntent clockIntent = Utils.getClockIntent(context);
+        if (clockIntent != null) {
+            remoteViews.setOnClickPendingIntent(Constants.id.time, clockIntent);
+        }
         manager.updateAppWidget(appWidgetIds, remoteViews);
     }
 
@@ -267,17 +269,23 @@ public class Clock_Widget extends AppWidgetProvider {
                 views.setViewPadding(Constants.id.dayOfMonth, 0, (int) (((double) paddingTopBase) - (((double) textSize) * 0.3d)), 0, 0);
                 views.setFloat(Constants.id.dayOfMonth, "setTextSize", dayOfMonthTextSize);
                 views.setTextViewText(Constants.id.dayOfMonth, dd);
-                //PendingIntent clockIntent = ClockUtil.getClockIntent(context);
-               // if (clockIntent != null) {
-               //     views.setOnClickPendingIntent(Constants.id.time, clockIntent);
-              //  }
-              //  setListenerOnDate(context, views);
+                // Pending Intent to start clock
+                PendingIntent clockIntent = Utils.getClockIntent(context);
+                if (clockIntent != null) {
+                    views.setOnClickPendingIntent(Constants.id.time, clockIntent);
+                }
+                setListenerOnDate(context, views);
                 manager.updateAppWidget(id, views);
             }
         }
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+    protected void setListenerOnDate(Context context, RemoteViews views) {
+        Intent calendarIntent = new Intent();
+        calendarIntent.setComponent(new ComponentName("com.google.android.calendar", "com.android.calendar.LaunchActivity"));
+        views.setOnClickPendingIntent(Constants.id.dateGroup, PendingIntent.getActivity(context, 0, calendarIntent, 0));
     }
 
     @Override
