@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#212121"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:typeface="normal"
+        android:textColor="@android:color/white"
+        android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|clip_vertical|clip_horizontal|start|end"
+        android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:id="@+id/textView"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stubActivityMainText"
+        android:textAlignment="center" />
+    <ImageView
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/preview_small" />
+    <TextView
+        android:layout_marginStart="15dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
+        android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/stubActivityThankYou" />
+</LinearLayout>

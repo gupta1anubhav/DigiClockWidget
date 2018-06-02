@@ -27,6 +27,7 @@ import java.util.Date;
 /**
  * Implementation of App Widget functionality.
  */
+
 public class Clock_Widget extends AppWidgetProvider {
 
     public static final String CLOCK_WIDGET_UPDATE = "com.anubhav87.clockwidget.Clock_Widget.CLOCK_WIDGET_UPDATE";

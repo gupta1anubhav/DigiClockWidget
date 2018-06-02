@@ -2,4 +2,7 @@
     <string name="app_name">ClockWidget</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="action_settings">Feedback</string>
+    <string name="stubActivityMainText">Please find the Android Clock Widget in your phone widget list and drag-and-drop it to home screen. You can also resize the widget. The widget will look like this:</string>
+    <string name="stubActivityThankYou">You can suggest improvements through feedback option.</string>
 </resources>
