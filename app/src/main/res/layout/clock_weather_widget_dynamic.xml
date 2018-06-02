@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:textSize="42dp"
+            android:textSize="45dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
@@ -23,7 +23,7 @@
             android:shadowDy="1.0"
             android:shadowRadius="3.0" />
         <TextView
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:id="@+id/ampm"
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:id="@+id/month"
@@ -61,7 +61,7 @@
             android:shadowRadius="3.0"
             android:layout_toRightOf="@+id/dayOfMonth" />
         <TextView
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
@@ -73,7 +73,7 @@
             android:shadowColor="#99000000"
             android:shadowDx="0.0" android:shadowDy="1.5" android:shadowRadius="3.0" android:layout_alignParentTop="false" />
         <TextView
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:id="@+id/year"
@@ -87,7 +87,7 @@
             android:layout_toRightOf="@+id/dayOfMonth"
             android:layout_below="@+id/month" />
         <TextView
-            android:textSize="25dp"
+            android:textSize="28dp"
             android:typeface="sans"
             android:textColor="#ffffffff"
             android:id="@+id/dayOfMonth"

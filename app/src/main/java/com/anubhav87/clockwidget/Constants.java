@@ -6,7 +6,7 @@ public final class Constants {
     }
 
     public static final class drawable {
-       // p/ublic static final int ic_louncher_main = R.drawable.ic_launcher_foreground;
+        public static final int ic_launcher_main = R.drawable.ic_launcher_foreground;
       //  public static final int icon = R.drawable.icon;
        // public static final int preview_big = R.drawable.preview_big;
       //  public static final int preview_small = R.drawable.preview_small;

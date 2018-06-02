@@ -4,7 +4,7 @@
     android:initialLayout="@layout/clock_weather_widget"
     android:minWidth="110dp"
     android:minHeight="40dp"
-    android:previewImage="@drawable/example_appwidget_preview"
+    android:previewImage="@drawable/preview_small"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
     >
