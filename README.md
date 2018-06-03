@@ -2,10 +2,10 @@
 
 Beautiful digital clock widget for your homescreen.
 
-![screenshot_2018-06-03-01-46-07-864_com miui home](https://user-images.githubusercontent.com/31107831/40885188-1e8f4e00-673f-11e8-9f71-ab413e5e2a0f.png)
-![screenshot_2018-06-03-01-50-11-259_com anubhav87 clockwidget](https://user-images.githubusercontent.com/31107831/40885191-216627d4-673f-11e8-9491-6b0f7a96ab92.png)
-![screenshot_2018-06-03-01-55-50-684_com miui home](https://user-images.githubusercontent.com/31107831/40885192-23cfed70-673f-11e8-819d-a9e593e674d5.png)
-![screenshot_2018-06-03-01-59-16-182_com miui home](https://user-images.githubusercontent.com/31107831/40885194-25c4d884-673f-11e8-8996-40e4ef647668.png)
+ <img src="https://github.com/gupta1anubhav/DigiClockWidget/tree/master/Screenshots/Screenshot_2018-06-03-01-46-07-864_com.miui.home.png"  height="150" width="120"/>
+  <img src="https://github.com/gupta1anubhav/DigiClockWidget/tree/master/Screenshots/Screenshot_2018-06-03-01-50-11-259_com.anubhav87.clockwidget.png"  height="150" width="120"/>
+   <img src="https://github.com/gupta1anubhav/DigiClockWidget/tree/master/Screenshots/Screenshot_2018-06-03-01-55-50-684_com.miui.home.png"  height="150" width="120"/>
+    <img src="https://github.com/gupta1anubhav/DigiClockWidget/tree/master/Screenshots/Screenshot_2018-06-03-01-59-16-182_com.miui.home.png"  height="150" width="120"/>
 
 ## Features
  
