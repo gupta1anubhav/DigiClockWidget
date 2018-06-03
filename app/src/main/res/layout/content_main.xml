@@ -20,7 +20,7 @@
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stubActivityMainText"
+        android:text="@string/MainActivityText"
         android:textAlignment="center" />
     <ImageView
         android:layout_marginStart="45dp"
@@ -39,5 +39,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/stubActivityThankYou" />
+        android:text="@string/MainActivityFeedback" />
 </LinearLayout>

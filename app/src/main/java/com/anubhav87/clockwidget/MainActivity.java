@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         // This activity is only showing fixed text about the widget.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Clock Widget");
+        toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
 
     }
