@@ -16,7 +16,7 @@ Beautiful digital clock widget for your homescreen.
 
 
 ## Sample.apk
-You can download the latest sample APK from this repo here: https://github.com/gupta1anubhav/DigiClockWidget/master/Sample/sample.apk
+You can download the latest sample APK from this repo here: [DigiClockWidget](https://github.com/gupta1anubhav/DigiClockWidget/tree/master/Sample/sample.apk)
 
 License
 -------
