@@ -2,6 +2,8 @@
 
 Beautiful digital clock widget for your homescreen.
 
+## Screenshots
+
  <img src="https://raw.githubusercontent.com/gupta1anubhav/DigiClockWidget/master/Screenshots/Screenshot_2018-06-03-01-50-11-259_com.anubhav87.clockwidget.png" width="200"/>  <img 
  src="https://raw.githubusercontent.com/gupta1anubhav/DigiClockWidget/master/Screenshots/Screenshot_2018-06-03-01-59-16-182_com.miui.home.png"  width="200"/>  <img 
  src="https://raw.githubusercontent.com/gupta1anubhav/DigiClockWidget/master/Screenshots/Screenshot_2018-06-03-01-46-07-864_com.miui.home.png" width="200"/>  <img 
