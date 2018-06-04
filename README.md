@@ -1,4 +1,4 @@
-# DigiClockWidget
+# DigiClockWidget  [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)]()  [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 Beautiful digital clock widget for your homescreen.
 
