@@ -36,7 +36,11 @@ public class UpdateService extends Service {
         timeFilter.addAction("android.intent.action.SCREEN_ON");
         timeFilter.addAction("android.intent.action.TIME_SET");
         timeFilter.addAction("android.intent.action.DATE_CHANGED");
-        timeFilter.addAction("android.intent.action.DATE_CHANGED");
+        timeFilter.addAction("android.intent.action.TIME_CHANGED");
+        timeFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
+        timeFilter.addAction("android.intent.action.SCREEN_OFF");
+        timeFilter.addAction("android.intent.action.SCREEN_ON");
+        timeFilter.addAction("android.intent.action.USER_PRESENT");
         return timeFilter;
     }
 
