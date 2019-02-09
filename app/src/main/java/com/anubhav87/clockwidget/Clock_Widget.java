@@ -1,6 +1,5 @@
 package com.anubhav87.clockwidget;
 
-import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -14,15 +13,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.RemoteViews;
-
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Implementation of App Widget functionality.
@@ -30,12 +26,11 @@ import java.util.Date;
 
 public class Clock_Widget extends AppWidgetProvider {
 
-    public static final String CLOCK_WIDGET_UPDATE = "com.anubhav87.clockwidget.Clock_Widget.CLOCK_WIDGET_UPDATE";
     public static String FORMAT_12_HOURS = "h:mm";
     public static String FORMAT_24_HOURS = "kk:mm";
     protected static final String PREFS_NAME = "preferences";
     private Calendar calendar;
-
+    TimeReceiver1 timeReceiver1 = null;
     public Calendar getCalendar() {
         // This method creates an instance of calender.
         if (this.calendar == null) {
@@ -43,43 +38,40 @@ public class Clock_Widget extends AppWidgetProvider {
         }
         return this.calendar;
     }
-
-
-   /* private PendingIntent createUpdateIntent(Context context){
-        Intent intent = new Intent(CLOCK_WIDGET_UPDATE);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,
-                intent,PendingIntent.FLAG_UPDATE_CURRENT);
-        return pendingIntent;
-    }*/
-
-    //This layout is old and very basic
-    // Removed for now.
-  /*  private void buildUpdate(Context context) {
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.clock__widget);
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date());
-        remoteViews.setTextViewText(R.id.hours, String.valueOf(c.get(Calendar.HOUR_OF_DAY)));
-        remoteViews.setTextViewText(R.id.min, String.valueOf(c.get(Calendar.MINUTE)));
-        ComponentName widget = new ComponentName(context,Clock_Widget.class);
-        appWidgetManager.updateAppWidget(widget, remoteViews);
-    }*/
-
+    @Override
+    public void onAppWidgetOptionsChanged(Context context, AppWidgetManager appWidgetManager, int appWidgetId, Bundle newOptions) {
+        // This function is called when widget is resized
+        int[] appWidgetIds = {appWidgetId};
+        updateClockWithDynamicTextSizes(context,appWidgetIds);
+        super.onAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions);
+    }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
         super.onUpdate(context,appWidgetManager,appWidgetIds);
         Log.e("onEnabled","hello");
-     //   context.startService(new Intent(context,UpdateService.class));
+        updateClockWithDynamicTextSizes(context,appWidgetIds);
     }
-
+    private IntentFilter getTimeFilter1() {
+        // These specify type of actions that can be broadcasted by the system to this app.
+        IntentFilter timeFilter = new IntentFilter("android.intent.action.TIME_TICK");
+        timeFilter.addAction("android.intent.action.SCREEN_OFF");
+        timeFilter.addAction("android.intent.action.SCREEN_ON");
+        timeFilter.addAction("android.intent.action.TIME_SET");
+        timeFilter.addAction("android.intent.action.DATE_CHANGED");
+        timeFilter.addAction("android.intent.action.TIME_CHANGED");
+        timeFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
+        timeFilter.addAction("android.intent.action.SCREEN_OFF");
+        timeFilter.addAction("android.intent.action.SCREEN_ON");
+        timeFilter.addAction("android.intent.action.USER_PRESENT");
+        timeFilter.addAction(Constants.CLOCK_WIDGET_UPDATE);
+        return timeFilter;
+    }
     @Override
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
-       // buildUpdate(context);
-       // PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        ComponentName componentName = new ComponentName(context,Clock_Widget.class);
+         ComponentName componentName = new ComponentName(context,Clock_Widget.class);
         int appWidgetIds[] = AppWidgetManager.getInstance(context).getAppWidgetIds(componentName);
         if (appWidgetIds.length == 0) {
             Log.e("onEnabled","hello");
@@ -87,26 +79,19 @@ public class Clock_Widget extends AppWidgetProvider {
         }
         Log.e("onEnabled","hello");
         updateClockWithDynamicTextSizes(context, appWidgetIds);
-
+        if (this.timeReceiver1 == null) {
+            this.timeReceiver1 = new TimeReceiver1();
+            context.getApplicationContext().registerReceiver(this.timeReceiver1,getTimeFilter1());
+        }
         context.startService(new Intent(context,UpdateService.class));
 
     }
 
-    public void onReceive(Context context, Intent intent) {
-        try {
-            // This method receives broadcast event from clock service which
-            // had sendBroadcast in the updatewidget method.
-            Log.d("onReceiveWidget", "onReceive " + intent.getAction());
-            super.onReceive(context, intent);
-                 // startTicking(context);
-              //  buildUpdate(context);
+    public class TimeReceiver1 extends BroadcastReceiver {
+        public void onReceive(Context context, Intent intent) {
             ComponentName componentName = new ComponentName(context,Clock_Widget.class);
             int appWidgetIds[] = AppWidgetManager.getInstance(context).getAppWidgetIds(componentName);
-
-            updateClockWithDynamicTextSizes(context,appWidgetIds);
-        }
-        catch (Exception e){
-            e.printStackTrace();
+           updateClockWithDynamicTextSizes(context,appWidgetIds);
         }
     }
     protected void updateClock(Context context, int[] appWidgetIds) {
@@ -170,10 +155,6 @@ public class Clock_Widget extends AppWidgetProvider {
             e.printStackTrace();
         }
 
-    }
-
-    private int getWidgetsCount(Context context, String className) {
-        return AppWidgetManager.getInstance(context).getAppWidgetIds(new ComponentName(context.getPackageName(), className)).length;
     }
 
     protected int calculateTextSize(String text, int maxWidth, int maxHeight, int baseTextSize) {
@@ -293,7 +274,6 @@ public class Clock_Widget extends AppWidgetProvider {
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
         super.onDisabled(context);
-
     }
 }
 

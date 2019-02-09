@@ -1,18 +1,12 @@
 package com.anubhav87.clockwidget;
 
 import android.app.Service;
-import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.RemoteViews;
-
-import java.util.Calendar;
-import java.util.Date;
 
 // Update service for clock widget
 
@@ -47,20 +41,17 @@ public class UpdateService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (this.timeReceiver == null) {
-//            Log.e("onStartCommandtimesnull",intent.getAction());
             this.timeReceiver = new TimeReceiver();
             registerReceiver(this.timeReceiver, getTimeFilter());
         }
-//        Log.e("onStartCommand",intent.getAction());
+
         updateWidget();
         return Service.START_STICKY;
     }
 
     private void updateWidget() {
-        Log.e("updateWidgetinService","hello");
-
         // Intent to ClockWeatherWidget to update the clock
-        sendBroadcast(new Intent().setAction(Clock_Widget.CLOCK_WIDGET_UPDATE));
+        sendBroadcast(new Intent(this, Clock_Widget.TimeReceiver1.class).setAction(Constants.CLOCK_WIDGET_UPDATE));
     }
 
     @Override

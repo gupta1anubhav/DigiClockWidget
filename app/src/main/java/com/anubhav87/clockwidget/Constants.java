@@ -1,6 +1,7 @@
 package com.anubhav87.clockwidget;
 
 public final class Constants {
+    static final String CLOCK_WIDGET_UPDATE = "com.anubhav87.clockwidget.Clock_Widget.CLOCK_WIDGET_UPDATE";
 
     public static final class attr {
     }
@@ -13,23 +14,19 @@ public final class Constants {
     }
 
     public static final class id {
-        public static final int ampm = R.id.ampm;
-        public static final int dateGroup = R.id.dateGroup;
-        public static final int dayOfMonth = R.id.dayOfMonth;
-        public static final int dayOfWeek = R.id.dayOfWeek;
+        static final int ampm = R.id.ampm;
+        static final int dateGroup = R.id.dateGroup;
+        static final int dayOfMonth = R.id.dayOfMonth;
+        static final int dayOfWeek = R.id.dayOfWeek;
         public static final int layout = R.id.layout;
-        public static final int month = R.id.month;
-        public static final int time = R.id.time;
-        public static final int year = R.id.year;
+        static final int month = R.id.month;
+        static final int time = R.id.time;
+        static final int year = R.id.year;
     }
 
-    public static final class layout {
-        public static final int digit_clock_widget = R.layout.clock_weather_widget;
-        public static final int digit_clock_widget_dynamic = R.layout.clock_weather_widget_dynamic;
-    }
-
-    public static final class string {
-        public static final int app_name = R.string.app_name;
+    static final class layout {
+        static final int digit_clock_widget = R.layout.clock_weather_widget;
+        static final int digit_clock_widget_dynamic = R.layout.clock_weather_widget_dynamic;
     }
 
 }
